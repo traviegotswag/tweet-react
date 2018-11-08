@@ -1,10 +1,13 @@
 
 class EntityMedia extends React.Component {
     render() {
-        console.log(this.props.entity.media[0].media_url_https);
-      return (
-        <span><img src={this.props.entity.media[0].media_url_https}/></span>
-      )
+        var mediaURL;
+        if (this.props.entity.media) {
+            mediaURL = <img src={this.props.entity.media[0].media_url_https}/>
+        }
+        return (
+            <span>{mediaURL}</span>
+          )
     }
 };
 
